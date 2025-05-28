@@ -60,6 +60,15 @@
 </li>
 <li class="my-0">
 <p><strong>Install the dependencies:</strong></p>
+  <p>For handling discord bot scripts:</p>
+  <pre><code class="language-sh">❯ npm install discord.js
+</code></pre>
+  <p>For handling minecraft server info requests:</p>
+    <pre><code class="language-sh">❯ npm install minecraft-server-util
+</code></pre>
+  <p>Optional if you just hardcode the variable data into the code:</p>
+    <pre><code class="language-sh">❯ npm install dotenv
+</code></pre>
 </li>
 </ol>
 <p><strong>Using <a href="https://www.npmjs.com/">npm</a>:</strong></p>
