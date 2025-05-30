@@ -55,7 +55,7 @@ client.on('interactionCreate', async (interaction) => {
     if(interaction.isCommand()) {
         const { commandName } = interaction;
         if (commandName === 'serverstatus') {
-        await interaction.deferReply({ ephemeral: true });
+        await interaction.deferReply({ flags:64 });
         try {            
             const server = await MinecraftServer.status(process.env.MCSERVERIP, parseInt(process.env.MCSERVERPORT));
             console.log(server);
