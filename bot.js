@@ -59,9 +59,9 @@ client.on('interactionCreate', async (interaction) => {
         try {            
             const server = await MinecraftServer.status(process.env.MCSERVERIP, parseInt(process.env.MCSERVERPORT));
             console.log(server);
-            interaction.editReply({ content: `Server Status: **ONLINE**\nPlayer Count: **${server.players.online}**`, flags:64 });            
+            await interaction.editReply({ content: `Server Status: **ONLINE**\nPlayer Count: **${server.players.online}**`, flags:64 });            
         } catch (error) {  
-            interaction.editReply({ content: `Server Status: **OFFLINE**\ncode: ${error.code}`, flags:64 });            
+            await interaction.editReply({ content: `Server Status: **OFFLINE**\ncode: ${error.code}`, flags:64 });            
         }            
             return;
 }}});
