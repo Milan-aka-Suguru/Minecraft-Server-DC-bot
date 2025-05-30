@@ -55,12 +55,13 @@ client.on('interactionCreate', async (interaction) => {
     if(interaction.isCommand()) {
         const { commandName } = interaction;
         if (commandName === 'serverstatus') {
+        await interaction.deferReply({ ephemeral: true });
         try {            
             const server = await MinecraftServer.status(process.env.MCSERVERIP, parseInt(process.env.MCSERVERPORT));
             console.log(server);
-            interaction.reply({ content: `Server Status: **ONLINE**\nPlayer Count: **${server.players.online}**`, ephemeral: true });            
-        } catch (error) {                        
-            interaction.reply({ content: `Server Status: **OFFLINE**\ncode: ${error.code}`, ephemeral: true });            
+            interaction.editReply({ content: `Server Status: **ONLINE**\nPlayer Count: **${server.players.online}**`, flags:64 });            
+        } catch (error) {  
+            interaction.editReply({ content: `Server Status: **OFFLINE**\ncode: ${error.code}`, flags:64 });            
         }            
             return;
 }}});
